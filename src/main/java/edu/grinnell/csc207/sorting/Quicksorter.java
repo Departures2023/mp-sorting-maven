@@ -1,6 +1,7 @@
 package edu.grinnell.csc207.sorting;
 
 import java.util.Comparator;
+import edu.grinnell.csc207.util.QuickSort;
 
 /**
  * Something that sorts using Quicksort.
@@ -9,6 +10,7 @@ import java.util.Comparator;
  *   The types of values that are sorted.
  *
  * @author Samuel A. Rebelsky
+ * @author Kevin Tang
  */
 
 public class Quicksorter<T> implements Sorter<T> {
@@ -55,6 +57,6 @@ public class Quicksorter<T> implements Sorter<T> {
    */
   @Override
   public void sort(T[] values) {
-    // STUB
+    QuickSort.quicksort(0, values.length - 1, values, order);
   } // sort(T[])
 } // class Quicksorter

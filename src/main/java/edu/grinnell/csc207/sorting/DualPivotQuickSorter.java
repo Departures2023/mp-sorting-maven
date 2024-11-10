@@ -1,19 +1,19 @@
 package edu.grinnell.csc207.sorting;
 
 import java.util.Comparator;
-import edu.grinnell.csc207.util.SelectionSort;
+import edu.grinnell.csc207.util.DualPivotQuickSort;
 
 /**
- * Something that sorts using selection sort.
+ * Something that sorts using DUal Pivot Quick sort.
  *
  * @param <T>
  *   The types of values that are sorted.
  *
- * @author Samuel A. Rebelsky
+ * @author Chatgpt
  * @author Kevin Tang
  */
 
-public class SelectionSorter<T> implements Sorter<T> {
+public class DualPivotQuickSorter<T> implements Sorter<T> {
   // +--------+------------------------------------------------------
   // | Fields |
   // +--------+
@@ -34,7 +34,7 @@ public class SelectionSorter<T> implements Sorter<T> {
    *   The order in which elements in the array should be ordered
    *   after sorting.
    */
-  public SelectionSorter(Comparator<? super T> comparator) {
+  public DualPivotQuickSorter(Comparator<? super T> comparator) {
     this.order = comparator;
   } // SelectionSorter(Comparator)
 
@@ -57,6 +57,6 @@ public class SelectionSorter<T> implements Sorter<T> {
    */
   @Override
   public void sort(T[] values) {
-    SelectionSort.selectionsort(values, order);
+    DualPivotQuickSort.dualpivotquicksort(values, 0, values.length - 1, order);
   } // sort(T[])
-} // class SelectionSorter
+}

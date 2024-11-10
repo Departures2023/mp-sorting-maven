@@ -17,7 +17,7 @@ import org.junit.jupiter.api.Test;
  * Rather, you should subclass it and initialize stringSorter and
  * intSorter in a static @BeforeAll method.
  *
- * @author Your Name
+ * @author Kevin Tang
  * @uathor Samuel A. Rebelsky
  */
 public class TestSorter {
@@ -120,4 +120,64 @@ public class TestSorter {
     ArrayUtils.permute(original);
     assertSorts(expected, original, intSorter);
   } // permutedIntegers
+
+  @Test
+  public void emptyTest() {
+    if (null == intSorter) {
+      return;
+    }
+    Integer[] original = {};
+    Integer[] expected = {};
+    assertSorts(expected, original, intSorter);
+  }
+ 
+  @Test
+  public void singleStringTest() {
+    if (null == stringSorter) {
+      return;
+    }
+    String[] original = {"string"};
+    String[] expected = {"string"};
+    assertSorts(expected, original, stringSorter);
+  }
+
+  @Test
+  public void sameElementTest() {
+    if (null == intSorter) {
+      return;
+    }
+    Integer[] original = {0, 0, 0, 0, 0, 0};
+    Integer[] expected = {0, 0, 0, 0, 0, 0};
+    assertSorts(expected, original, intSorter);
+  }
+
+  @Test
+  public void duplicateIntegerTest() {
+    if (null == intSorter) {
+      return;
+    }
+    Integer[] original = {0, 3, 1, 2, 3, 2, 1, 0};
+    Integer[] expected = {0, 0, 1, 1, 2, 2, 3, 3};
+    assertSorts(expected, original, intSorter);
+  }
+ 
+  @Test
+  public void largeIntegerTest() {
+    if (null == intSorter) {
+      return;
+    }
+    Integer[] original = {Integer.MAX_VALUE, 0, Integer.MIN_VALUE, 99999, -99999};
+    Integer[] expected = {Integer.MIN_VALUE, -99999, 0, 99999, Integer.MAX_VALUE};
+    assertSorts(expected, original, intSorter);
+  }
+ 
+  @Test
+  public void sortedArrayTest() {
+    if (null == intSorter) {
+      return;
+    }
+    Integer[] original = {1, 2, 3, 4, 5, 6};
+    Integer[] expected = {1, 2, 3, 4, 5, 6};
+    assertSorts(expected, original, intSorter);
+  }
 } // class TestSorter
