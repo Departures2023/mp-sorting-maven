@@ -13,7 +13,7 @@ import edu.grinnell.csc207.util.QuickSort;
  * @author Kevin Tang
  */
 
-public class Quicksorter<T> implements Sorter<T> {
+public class QuickSorter<T> implements Sorter<T> {
   // +--------+------------------------------------------------------
   // | Fields |
   // +--------+
@@ -34,7 +34,7 @@ public class Quicksorter<T> implements Sorter<T> {
    *   The order in which elements in the array should be ordered
    *   after sorting.
    */
-  public Quicksorter(Comparator<? super T> comparator) {
+  public QuickSorter(Comparator<? super T> comparator) {
     this.order = comparator;
   } // Quicksorter(Comparator)
 

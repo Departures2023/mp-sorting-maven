@@ -121,6 +121,10 @@ public class TestSorter {
     assertSorts(expected, original, intSorter);
   } // permutedIntegers
 
+  /**
+   * Ensure that an empty array could be handled
+   * correctly.
+   */
   @Test
   public void emptyTest() {
     if (null == intSorter) {
@@ -129,8 +133,12 @@ public class TestSorter {
     Integer[] original = {};
     Integer[] expected = {};
     assertSorts(expected, original, intSorter);
-  }
+  } // emptyTest
  
+  /**
+   * Ensure that an array with only one element(string)
+   * could be handled correctly.
+   */
   @Test
   public void singleStringTest() {
     if (null == stringSorter) {
@@ -139,8 +147,12 @@ public class TestSorter {
     String[] original = {"string"};
     String[] expected = {"string"};
     assertSorts(expected, original, stringSorter);
-  }
+  } // singleStringTest
 
+  /**
+   * Ensure that an array with all same element
+   * could be handled correctly.
+   */
   @Test
   public void sameElementTest() {
     if (null == intSorter) {
@@ -149,8 +161,12 @@ public class TestSorter {
     Integer[] original = {0, 0, 0, 0, 0, 0};
     Integer[] expected = {0, 0, 0, 0, 0, 0};
     assertSorts(expected, original, intSorter);
-  }
+  } // sameElementTest
 
+  /**
+   * Ensure that an array with duplicated integers
+   * could be handled correctly.
+   */
   @Test
   public void duplicateIntegerTest() {
     if (null == intSorter) {
@@ -159,8 +175,12 @@ public class TestSorter {
     Integer[] original = {0, 3, 1, 2, 3, 2, 1, 0};
     Integer[] expected = {0, 0, 1, 1, 2, 2, 3, 3};
     assertSorts(expected, original, intSorter);
-  }
- 
+  } // duplicateIntegerTest
+
+  /**
+   * Ensure that an array with extremely small and large integer
+   * could be handled sorts correctly.
+   */
   @Test
   public void largeIntegerTest() {
     if (null == intSorter) {
@@ -169,8 +189,12 @@ public class TestSorter {
     Integer[] original = {Integer.MAX_VALUE, 0, Integer.MIN_VALUE, 99999, -99999};
     Integer[] expected = {Integer.MIN_VALUE, -99999, 0, 99999, Integer.MAX_VALUE};
     assertSorts(expected, original, intSorter);
-  }
- 
+  } // largeIntegerTest
+
+  /**
+   * Ensure that a already sorted array could be handled
+   * correctly.
+   */
   @Test
   public void sortedArrayTest() {
     if (null == intSorter) {
@@ -179,5 +203,5 @@ public class TestSorter {
     Integer[] original = {1, 2, 3, 4, 5, 6};
     Integer[] expected = {1, 2, 3, 4, 5, 6};
     assertSorts(expected, original, intSorter);
-  }
+  } // sortedArrayTest
 } // class TestSorter

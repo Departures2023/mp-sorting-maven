@@ -8,7 +8,7 @@ import java.util.Comparator;
  *   The types of values that are sorted.
  * @author Kevin Tang
  */
-public class DualPivotQuickSort {
+public class TangKevinSort {
   /**
    * @param <T> datatype
    * @param values array to be sorted
@@ -16,14 +16,14 @@ public class DualPivotQuickSort {
    * @param comparator comparator
    */
   // Dual-Pivot Quicksort implementation
-  public static <T> void dualpivotquicksort(T[] array, int low, int high, Comparator<? super T> comparator) {
+  public static <T> void tangkevinsort(T[] array, int low, int high, Comparator<? super T> comparator) {
     if (low < high) {
       int[] pivots = partition(array, low, high, comparator);
       int lp = pivots[0];
       int rp = pivots[1];
-      dualpivotquicksort(array, low, lp - 1, comparator);
-      dualpivotquicksort(array, lp + 1, rp - 1, comparator);
-      dualpivotquicksort(array, rp + 1, high, comparator);
+      tangkevinsort(array, low, lp - 1, comparator);
+      tangkevinsort(array, lp + 1, rp - 1, comparator);
+      tangkevinsort(array, rp + 1, high, comparator);
     }
   }
 

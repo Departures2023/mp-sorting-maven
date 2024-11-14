@@ -1,7 +1,7 @@
 package edu.grinnell.csc207.sorting;
 
 import java.util.Comparator;
-import edu.grinnell.csc207.util.DualPivotQuickSort;
+import edu.grinnell.csc207.util.TangKevinSort;
 
 /**
  * Something that sorts using DUal Pivot Quick sort.
@@ -13,7 +13,7 @@ import edu.grinnell.csc207.util.DualPivotQuickSort;
  * @author Kevin Tang
  */
 
-public class DualPivotQuickSorter<T> implements Sorter<T> {
+public class TangKevinSorter<T> implements Sorter<T> {
   // +--------+------------------------------------------------------
   // | Fields |
   // +--------+
@@ -34,7 +34,7 @@ public class DualPivotQuickSorter<T> implements Sorter<T> {
    *   The order in which elements in the array should be ordered
    *   after sorting.
    */
-  public DualPivotQuickSorter(Comparator<? super T> comparator) {
+  public TangKevinSorter(Comparator<? super T> comparator) {
     this.order = comparator;
   } // SelectionSorter(Comparator)
 
@@ -57,6 +57,6 @@ public class DualPivotQuickSorter<T> implements Sorter<T> {
    */
   @Override
   public void sort(T[] values) {
-    DualPivotQuickSort.dualpivotquicksort(values, 0, values.length - 1, order);
+    TangKevinSort.tangkevinsort(values, 0, values.length - 1, order);
   } // sort(T[])
 }

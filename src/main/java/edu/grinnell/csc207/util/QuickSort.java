@@ -31,6 +31,7 @@ public class QuickSort<T> {
       values[start] = values[end];
     } // while
     values[end] = std;
+    //System.out.println(end);
     return end;
   } // partition
 
