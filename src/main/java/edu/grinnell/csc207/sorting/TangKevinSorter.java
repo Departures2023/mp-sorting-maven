@@ -59,4 +59,4 @@ public class TangKevinSorter<T> implements Sorter<T> {
   public void sort(T[] values) {
     TangKevinSort.tangkevinsort(values, 0, values.length - 1, order);
   } // sort(T[])
-}
+} // TangKevinSorter
